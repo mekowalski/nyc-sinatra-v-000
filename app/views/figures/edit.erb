@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Figure</h1>
+    <form class="" action="/figures<%= @figure.id %>" method="post">
+      <strong>Name</strong>
+      <input type="text" name="figure[name]" value="<%= @figure.name %>" id="figure_name">
+      <br><br>
+      
+    </form>
+  </body>
+</html>

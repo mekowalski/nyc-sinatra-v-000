@@ -21,4 +21,16 @@ class FiguresController < ApplicationController
     @figure.landmarks << @landmark
   end
 
+  get '/figures/:id' do
+    # single figure
+    # "One Figure"
+    @figure = Figure.find_by_id(params[:id])
+    erb :'/figures/show'
+  end
+
+  get '/figures/:id/edit' do
+    # view form to edit single figure
+    "edit figure"
+  end
+
 end
