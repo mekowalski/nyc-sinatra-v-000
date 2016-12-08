@@ -30,7 +30,18 @@ class FiguresController < ApplicationController
 
   get '/figures/:id/edit' do
     # view form to edit single figure
-    "edit figure"
+    # "edit figure"
+    @figure = Figure.find_by_id(params[:id])
+    erb :'/figures/edit'
+  end
+
+  post '/figures/:id' do
+    @figure = Figure.find_by_id(params[:id])
+    @figure.update(params[:figure])
+    if !params["landmark"][:name].empty?
+      @figure.landmarks << Landmark.create(params[:landmark])
+    end
+    redirect "/figures/#{figure.id}"
   end
 
 end
