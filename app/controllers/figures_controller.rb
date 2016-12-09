@@ -1,3 +1,4 @@
+require "pry"
 class FiguresController < ApplicationController
 
   get '/figures' do
@@ -31,6 +32,7 @@ class FiguresController < ApplicationController
   get '/figures/:id/edit' do
     # view form to edit single figure
     # "edit figure"
+    # binding.pry
     @figure = Figure.find_by_id(params[:id])
     erb :'/figures/edit'
   end
